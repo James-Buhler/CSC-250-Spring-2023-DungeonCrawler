@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - north
-  - south
-  - east
-  - west
+  - Exit
   layers:
   - Default
   - TransparentFX
