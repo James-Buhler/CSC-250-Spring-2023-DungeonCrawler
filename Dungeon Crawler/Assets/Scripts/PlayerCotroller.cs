@@ -10,7 +10,7 @@ public class PlayerCotroller : MonoBehaviour
     public GameObject origin;
     private GameObject[] listOfExits;
     private GameObject[] exitMap;
-    private float movementSpeed;
+    public float movementSpeed;
     bool buttonWasPressed;
     bool hasArrivedAtCenter;
     private Vector3 opositeDirection;
@@ -19,18 +19,18 @@ public class PlayerCotroller : MonoBehaviour
     void Start()
     {
         this.rb = this.GetComponent<Rigidbody>();
-        this.movementSpeed = 80.0f;
         this.listOfExits = new GameObject[8] { northExit, southExit, eastExit, westExit, southeastExit, southwestExit, northeastExit, northwestExit };
         this.exitMap = new GameObject[8] { southExit, northExit, westExit, eastExit, northwestExit, northeastExit, southwestExit, southeastExit };
+        print(MasterData.whereDidIComeFrom);
         for(int i = 0; i < 8; i++)
         {
             if (this.listOfExits[i].name.Equals(MasterData.whereDidIComeFrom))
             {
                 this.rb.position = this.exitMap[i].transform.position;
                 this.opositeDirection = this.listOfExits[i].transform.position;
-                this.rb.AddForce(opositeDirection * movementSpeed);
             }
         }
+        this.rb.AddForce(opositeDirection * movementSpeed);
         if (MasterData.whereDidIComeFrom.Equals("?"))
         {
             this.hasArrivedAtCenter = true;
@@ -39,7 +39,7 @@ public class PlayerCotroller : MonoBehaviour
         else
         {
             this.hasArrivedAtCenter = false;
-            this.buttonWasPressed = true;
+            this.buttonWasPressed = false;
         }
         
     }
@@ -50,42 +50,42 @@ public class PlayerCotroller : MonoBehaviour
 
         if (buttonWasPressed)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && MasterData.p.getCurrentRoom().hasExit("north"))
             {
                 this.rb.AddForce(this.northExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S) && MasterData.p.getCurrentRoom().hasExit("south"))
             {
                 this.rb.AddForce(this.southExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D) && MasterData.p.getCurrentRoom().hasExit("east"))
             {
                 this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A) && MasterData.p.getCurrentRoom().hasExit("west"))
             {
                 this.rb.AddForce(this.westExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) && MasterData.p.getCurrentRoom().hasExit("northwest"))
             {
                 this.rb.AddForce(this.northwestExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && MasterData.p.getCurrentRoom().hasExit("northeast"))
             {
                 this.rb.AddForce(this.northeastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) && MasterData.p.getCurrentRoom().hasExit("southwest"))
             {
                 this.rb.AddForce(this.southwestExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
             }
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.X) && MasterData.p.getCurrentRoom().hasExit("southeast"))
             {
                 this.rb.AddForce(this.southeastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
@@ -102,6 +102,7 @@ public class PlayerCotroller : MonoBehaviour
                 {
                     MasterData.whereDidIComeFrom = this.listOfExits[i].name;
                     MasterData.count++;
+                    MasterData.p.getCurrentRoom().takeExit(MasterData.p, MasterData.whereDidIComeFrom);
                     SceneManager.LoadScene("DungeonRoom");
                 }
             }

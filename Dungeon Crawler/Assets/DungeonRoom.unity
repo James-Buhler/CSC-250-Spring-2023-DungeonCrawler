@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532774598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.802, y: 0.5, z: -4.802}
+  m_LocalPosition: {x: -7, y: 0.5, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,7 +390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619305194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.802, y: 0.5, z: 4.802}
+  m_LocalPosition: {x: -7, y: 0.5, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -898,7 +898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575918031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.802, y: 0.5, z: 4.802}
+  m_LocalPosition: {x: 7, y: 0.5, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -995,7 +995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601896233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.802, y: 0.5, z: -4.802}
+  m_LocalPosition: {x: 7, y: 0.5, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1296,14 +1296,14 @@ MonoBehaviour:
   southwestExit: {fileID: 532774598}
   northeastExit: {fileID: 1575918031}
   northwestExit: {fileID: 619305194}
-  southOn: 1
-  northOn: 1
-  eastOn: 1
-  westOn: 1
-  southeastOn: 1
-  southwestOn: 1
-  northeastOn: 1
-  northwestOn: 1
+  southOn: 0
+  northOn: 0
+  eastOn: 0
+  westOn: 0
+  southeastOn: 0
+  southwestOn: 0
+  northeastOn: 0
+  northwestOn: 0
 --- !u!4 &2012324843
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,6 +1380,7 @@ MonoBehaviour:
   northeastExit: {fileID: 1575918031}
   northwestExit: {fileID: 619305194}
   origin: {fileID: 379526003}
+  movementSpeed: 80
 --- !u!54 &2021580540
 Rigidbody:
   m_ObjectHideFlags: 0

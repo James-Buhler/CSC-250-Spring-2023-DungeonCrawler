@@ -13,19 +13,23 @@ public class DungeonSetup : MonoBehaviour
     public GameObject northeastExit;
     public GameObject northwestExit;
 
-    public bool southOn, northOn, eastOn, westOn, southeastOn, southwestOn, northeastOn, northwestOn;
-
     // Start is called before the first frame update
     void Start()
     {
-        this.southExit.SetActive(southOn);
-        this.northExit.SetActive(northOn);
-        this.eastExit.SetActive(eastOn);
-        this.westExit.SetActive(westOn);
-        this.southeastExit.SetActive(southeastOn);
-        this.southwestExit.SetActive(southwestOn);
-        this.northeastExit.SetActive(northeastOn);
-        this.northwestExit.SetActive(northwestOn);
+        MasterData.setupDungeon();
+        string[] map = { "north", "south", "east", "west", "northeast", "northwest", "southwest", "southeast" };
+
+        this.northExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[0]));
+        this.southExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[1]));
+        this.eastExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[2]));
+        this.westExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[3]));
+        this.northeastExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[4]));
+        this.northwestExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[5]));
+        this.southwestExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[6]));
+        this.southeastExit.SetActive(MasterData.p.getCurrentRoom().hasExit(map[7]));
+
+
+
     }
 
     // Update is called once per frame
