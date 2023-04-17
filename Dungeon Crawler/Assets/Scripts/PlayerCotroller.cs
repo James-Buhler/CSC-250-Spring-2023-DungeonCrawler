@@ -18,6 +18,7 @@ public class PlayerCotroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print(Random.Range(1, 10));
         this.rb = this.GetComponent<Rigidbody>();
         this.listOfExits = new GameObject[8] { northExit, southExit, eastExit, westExit, southeastExit, southwestExit, northeastExit, northwestExit };
         this.exitMap = new GameObject[8] { southExit, northExit, westExit, eastExit, northwestExit, northeastExit, southwestExit, southeastExit };
@@ -40,8 +41,15 @@ public class PlayerCotroller : MonoBehaviour
         {
             this.hasArrivedAtCenter = false;
             this.buttonWasPressed = false;
+            if (MasterData.count > 0)
+            {
+                if (Random.Range(1, 100) <= 30)
+                {
+                    SceneManager.LoadScene("FightScene");
+
+                }
+            }
         }
-        
     }
 
     // Update is called once per frame
@@ -92,6 +100,7 @@ public class PlayerCotroller : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (this.hasArrivedAtCenter)
