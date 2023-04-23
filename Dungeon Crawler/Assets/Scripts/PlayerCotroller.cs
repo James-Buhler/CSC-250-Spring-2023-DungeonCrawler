@@ -11,18 +11,15 @@ public class PlayerCotroller : MonoBehaviour
     private GameObject[] listOfExits;
     private GameObject[] exitMap;
     public float movementSpeed;
-    bool buttonWasPressed;
-    bool hasArrivedAtCenter;
+    private bool buttonWasPressed;
     private Vector3 opositeDirection;
 
     // Start is called before the first frame update
     void Start()
     {
-        print(Random.Range(1, 10));
         this.rb = this.GetComponent<Rigidbody>();
         this.listOfExits = new GameObject[8] { northExit, southExit, eastExit, westExit, southeastExit, southwestExit, northeastExit, northwestExit };
         this.exitMap = new GameObject[8] { southExit, northExit, westExit, eastExit, northwestExit, northeastExit, southwestExit, southeastExit };
-        print(MasterData.whereDidIComeFrom);
         for(int i = 0; i < 8; i++)
         {
             if (this.listOfExits[i].name.Equals(MasterData.whereDidIComeFrom))
@@ -34,21 +31,13 @@ public class PlayerCotroller : MonoBehaviour
         this.rb.AddForce(opositeDirection * movementSpeed);
         if (MasterData.whereDidIComeFrom.Equals("?"))
         {
-            this.hasArrivedAtCenter = true;
+            MasterData.hasArrivedAtCenter = true;
             this.buttonWasPressed = true;
         }
         else
         {
-            this.hasArrivedAtCenter = false;
+            MasterData.hasArrivedAtCenter = false;
             this.buttonWasPressed = false;
-            if (MasterData.count > 0)
-            {
-                if (Random.Range(1, 100) <= 30)
-                {
-                    SceneManager.LoadScene("FightScene");
-
-                }
-            }
         }
     }
 
@@ -103,7 +92,7 @@ public class PlayerCotroller : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (this.hasArrivedAtCenter)
+        if (MasterData.hasArrivedAtCenter)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -119,7 +108,7 @@ public class PlayerCotroller : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (this.hasArrivedAtCenter == false)
+        if (MasterData.hasArrivedAtCenter == false)
         {
             if(other.gameObject == origin)
             {

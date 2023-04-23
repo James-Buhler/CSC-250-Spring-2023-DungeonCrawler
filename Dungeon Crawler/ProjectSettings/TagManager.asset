@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Exit
   - Monster
+  - Fightchance
+  - turnaorund
+  - turnaround
+  - Origin
   layers:
   - Default
   - TransparentFX
