@@ -17,6 +17,10 @@ public class Inhabitant
     public void tookDamage(int i)
     {
         this.hp = this.hp - i;
+        if (this.hp < 0)
+        {
+            this.hp = 0;
+        }
     }
     public int getHP()
     {
