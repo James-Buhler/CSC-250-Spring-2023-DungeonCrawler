@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -36,7 +36,7 @@ public class FightScenemover : MonoBehaviour
             this.rb.velocity = Vector3.zero;
             this.transform.position = this.startingPosition;
             this.transform.rotation = this.startingRotation;
-            if(MasterData.isEveryoneAlive)
+            if (MasterData.isEveryoneAlive)
             {
                 this.BattleInfo.text = MasterData.d.fight();
             }

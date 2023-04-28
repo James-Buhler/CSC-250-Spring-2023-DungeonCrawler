@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +32,7 @@ public class RefereeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.b)
+        if (this.b)
         {
             startFight();
             this.b = false;

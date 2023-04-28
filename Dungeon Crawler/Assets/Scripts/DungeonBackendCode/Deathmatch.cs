@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,7 +33,7 @@ public class Deathmatch
         int damage = 0;
         string s = "";
 
-        if(this.dude2.getHP() <= 0)
+        if (this.dude2.getHP() <= 0)
         {
             this.dude2GO.SetActive(false);
             MasterData.isEveryoneAlive = false;
@@ -45,11 +45,11 @@ public class Deathmatch
             MasterData.isEveryoneAlive = false;
             return this.dude2.getName() + " WINS!!!";
         }
-        if(this.turncounter == -1)
+        if (this.turncounter == -1)
         {
             this.turncounter = r.Next(1, 3);
         }
-        if(this.turncounter == 1)
+        if (this.turncounter == 1)
         {
             this.rbDude1.AddForce(this.dude2GO.transform.position * 20.0f);
             damage = this.dude1.getDamage();

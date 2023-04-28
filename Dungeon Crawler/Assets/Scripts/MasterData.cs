@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MasterData
 {
@@ -15,7 +15,7 @@ public class MasterData
 
     public static void setupDungeon()
     {
-        if(MasterData.isDungeonSetup == false)
+        if (MasterData.isDungeonSetup == false)
         {
             MasterData.cs = new Dungeon(100);
             MasterData.cs.populateCSDepartment();
