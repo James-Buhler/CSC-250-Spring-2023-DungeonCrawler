@@ -12,6 +12,7 @@ public class RefereeController : MonoBehaviour
     private Monster theMonster;
     public TextMeshProUGUI BattleInfo;
     private bool b;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,19 @@ public class RefereeController : MonoBehaviour
         this.monsterhealth.text = "Monster's health: " + this.theMonster.getHP();
         this.monsterarmor.text = "Monster's armor: " + this.theMonster.getAC();
         this.monsterattack.text = "Monster's attack: " + this.theMonster.getDamage();
+
+        if (!MasterData.isEveryoneAlive && !MasterData.isWinnerCelebrating)
+        {
+            StartCoroutine(jump());
+            MasterData.isWinnerCelebrating = true;
+        }
+    }
+
+    IEnumerator jump()
+    {
+        MasterData.winner.AddForce(Vector3.up * 125);
+        yield return new WaitForSeconds(0.5f);
+        MasterData.isWinnerCelebrating = false;
     }
 
     public void startFight()

@@ -14,6 +14,7 @@ public class Deathmatch
     private Rigidbody rbDude1;
     private Rigidbody rbDude2;
     private int turncounter;
+    private Vector3 hi = new Vector3(90, 0, 0);
 
     public Deathmatch(Inhabitant dude1, Inhabitant dude2, GameObject dude1GO, GameObject dude2GO)
     {
@@ -35,13 +36,17 @@ public class Deathmatch
 
         if (this.dude2.getHP() <= 0)
         {
-            this.dude2GO.SetActive(false);
+            this.dude2GO.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            this.dude2GO.transform.Rotate(hi);
+            MasterData.winner = this.rbDude1;
             MasterData.isEveryoneAlive = false;
             return this.dude1.getName() + " WINS!!!";
         }
         else if (this.dude1.getHP() <= 0)
         {
-            this.dude1GO.SetActive(false);
+            this.dude1GO.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            this.dude1GO.transform.Rotate(hi);
+            MasterData.winner = this.rbDude2;
             MasterData.isEveryoneAlive = false;
             return this.dude2.getName() + " WINS!!!";
         }

@@ -12,6 +12,8 @@ public class MasterData
     public static GameObject musicLooper = null;
     public static Deathmatch d = null;
     public static bool isEveryoneAlive = true;
+    public static Rigidbody winner = null;
+    public static bool isWinnerCelebrating = false;
 
     public static void setupDungeon()
     {

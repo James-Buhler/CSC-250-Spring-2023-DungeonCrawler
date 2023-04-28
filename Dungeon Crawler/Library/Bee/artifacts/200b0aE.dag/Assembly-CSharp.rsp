@@ -353,6 +353,7 @@
 "Assets/Scripts/DungeonBackendCode/Room.cs"
 "Assets/Scripts/DungeonSetup.cs"
 "Assets/Scripts/FightScenemover.cs"
+"Assets/Scripts/FightSceneMusic.cs"
 "Assets/Scripts/MasterData.cs"
 "Assets/Scripts/MonsterTrigger.cs"
 "Assets/Scripts/MusicLooper.cs"
