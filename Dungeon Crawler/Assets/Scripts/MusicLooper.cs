@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class MusicLooper : MonoBehaviour
 {
-    private bool b = true;
-    private AudioSource winsound;
+    
 
     private void Awake()
     {
@@ -19,13 +18,5 @@ public class MusicLooper : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    private void Update()
-    {
-        if(!MasterData.isEveryoneAlive && b)
-        {
-            this.winsound = this.GetComponent<AudioSource>();
-            this.winsound.Play();
-            this.b = false;
-        }
-    }
+    
 }
