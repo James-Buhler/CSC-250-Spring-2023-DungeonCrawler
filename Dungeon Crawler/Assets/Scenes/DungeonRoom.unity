@@ -378,6 +378,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &494793588
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +731,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &672863322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,6 +1209,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &1359887893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1329,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &1415618841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1449,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &1521305220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2151,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &2012324841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,6 +2328,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}
 --- !u!1 &2021580537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,3 +2585,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableFights: 1
   changeToGetIntoFight: 100
+  northExit: {fileID: 1762834261}
+  southExit: {fileID: 1532048674}
+  eastExit: {fileID: 1521305220}
+  westExit: {fileID: 1946186300}
+  southeastExit: {fileID: 1601896233}
+  southwestExit: {fileID: 532774598}
+  northeastExit: {fileID: 1575918031}
+  northwestExit: {fileID: 619305194}

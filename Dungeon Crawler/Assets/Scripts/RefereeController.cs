@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class RefereeController : MonoBehaviour
@@ -12,7 +13,8 @@ public class RefereeController : MonoBehaviour
     private Monster theMonster;
     public TextMeshProUGUI BattleInfo;
     private bool b;
-    
+    public GameObject blackout;
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,7 @@ public class RefereeController : MonoBehaviour
     {
         if (this.b)
         {
-            startFight();
+            StartCoroutine(waitBeforeFight(2.0f));
             this.b = false;
         }
         this.playerhealth.text = "Player's health: " + MasterData.p.getHP();
@@ -44,19 +46,53 @@ public class RefereeController : MonoBehaviour
         this.monsterhealth.text = "Monster's health: " + this.theMonster.getHP();
         this.monsterarmor.text = "Monster's armor: " + this.theMonster.getAC();
         this.monsterattack.text = "Monster's attack: " + this.theMonster.getDamage();
-
-        if (!MasterData.isEveryoneAlive && !MasterData.isWinnerCelebrating)
+        if (MasterData.p == MasterData.dudeWhoWon)
         {
-            StartCoroutine(jump());
-            MasterData.isWinnerCelebrating = true;
+            if (!MasterData.isEveryoneAlive && !MasterData.isWinnerCelebrating)
+            {
+                StartCoroutine(jump());
+                MasterData.isWinnerCelebrating = true;
+                StartCoroutine(goBackToDungeon());
+            }
         }
+        else
+        {
+            if (!MasterData.isEveryoneAlive && !MasterData.isWinnerCelebrating)
+            {
+                StartCoroutine(jump());
+                MasterData.isWinnerCelebrating = true;
+                StartCoroutine(loadYouLoseScreen());
+            }
+        }
+    }
+
+    IEnumerator loadYouLoseScreen ()
+    {
+        yield return new WaitForSeconds(1.5f);
+        this.blackout.SetActive(true);
+        this.BattleInfo.text = "GAME OVER";
+        
+    }
+
+
+    IEnumerator goBackToDungeon ()
+    {
+        yield return new WaitForSeconds(6.0f);
+        SceneManager.LoadScene("DungeonRoom");
     }
 
     IEnumerator jump()
     {
         MasterData.winner.AddForce(Vector3.up * 125);
         yield return new WaitForSeconds(0.5f);
-        MasterData.isWinnerCelebrating = false;
+        StartCoroutine(jump());
+    }
+
+    IEnumerator waitBeforeFight(float f)
+    {
+        this.BattleInfo.text = "FIGHT!!!";
+        yield return new WaitForSeconds(f);
+        startFight();
     }
 
     public void startFight()

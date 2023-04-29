@@ -51,41 +51,49 @@ public class PlayerCotroller : MonoBehaviour
             {
                 this.rb.AddForce(this.northExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "north";
             }
             if (Input.GetKeyDown(KeyCode.S) && MasterData.p.getCurrentRoom().hasExit("south"))
             {
                 this.rb.AddForce(this.southExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "south";
             }
             if (Input.GetKeyDown(KeyCode.D) && MasterData.p.getCurrentRoom().hasExit("east"))
             {
                 this.rb.AddForce(this.eastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "east";
             }
             if (Input.GetKeyDown(KeyCode.A) && MasterData.p.getCurrentRoom().hasExit("west"))
             {
                 this.rb.AddForce(this.westExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "west";
             }
             if (Input.GetKeyDown(KeyCode.Q) && MasterData.p.getCurrentRoom().hasExit("northwest"))
             {
                 this.rb.AddForce(this.northwestExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "northwest";
             }
             if (Input.GetKeyDown(KeyCode.E) && MasterData.p.getCurrentRoom().hasExit("northeast"))
             {
                 this.rb.AddForce(this.northeastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "northeast";
             }
             if (Input.GetKeyDown(KeyCode.Z) && MasterData.p.getCurrentRoom().hasExit("southwest"))
             {
                 this.rb.AddForce(this.southwestExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "southwest";
             }
             if (Input.GetKeyDown(KeyCode.X) && MasterData.p.getCurrentRoom().hasExit("southeast"))
             {
                 this.rb.AddForce(this.southeastExit.transform.position * movementSpeed);
                 buttonWasPressed = false;
+                MasterData.directionheaded = "southeast";
             }
         }
     }

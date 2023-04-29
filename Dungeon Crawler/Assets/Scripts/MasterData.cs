@@ -4,7 +4,9 @@ public class MasterData
 {
     public static int count = 0;
     public static string whereDidIComeFrom = "?";
+    public static string directionheaded = "?";
     private static bool isDungeonSetup = false;
+    public static Inhabitant dudeWhoWon = null;
     public static Dungeon cs = null;
     public static Player p = null;
     public static Monster m = null;

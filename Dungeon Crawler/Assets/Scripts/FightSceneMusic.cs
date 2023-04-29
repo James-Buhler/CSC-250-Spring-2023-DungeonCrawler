@@ -7,6 +7,7 @@ public class FightSceneMusic : MonoBehaviour
     private bool b = true;
     public AudioSource winsound;
     public AudioSource fightsound;
+    public AudioSource losesound;
 
     private void Start()
     {
@@ -17,8 +18,16 @@ public class FightSceneMusic : MonoBehaviour
     {
         if (!MasterData.isEveryoneAlive && b)
         {
-            this.fightsound.Pause();
-            this.winsound.Play();
+            if(MasterData.p == MasterData.dudeWhoWon)
+            {
+                this.fightsound.Pause();
+                this.winsound.Play();
+            }
+            else
+            {
+                this.fightsound.Pause();
+                this.losesound.Play();
+            }
             this.b = false;
         }
     }

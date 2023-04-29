@@ -25,6 +25,8 @@ public class Deathmatch
         this.rbDude1 = this.dude1GO.GetComponent<Rigidbody>();
         this.rbDude2 = this.dude2GO.GetComponent<Rigidbody>();
         this.turncounter = -1;
+        MasterData.isEveryoneAlive = true;
+        MasterData.isWinnerCelebrating = false;
     }
 
     public string fight()
@@ -40,6 +42,7 @@ public class Deathmatch
             this.dude2GO.transform.Rotate(hi);
             MasterData.winner = this.rbDude1;
             MasterData.isEveryoneAlive = false;
+            MasterData.dudeWhoWon = this.dude1;
             return this.dude1.getName() + " WINS!!!";
         }
         else if (this.dude1.getHP() <= 0)
@@ -48,7 +51,8 @@ public class Deathmatch
             this.dude1GO.transform.Rotate(hi);
             MasterData.winner = this.rbDude2;
             MasterData.isEveryoneAlive = false;
-            return this.dude2.getName() + " WINS!!!";
+            MasterData.dudeWhoWon = this.dude2;
+            return "YOU LOSE";
         }
         if (this.turncounter == -1)
         {
