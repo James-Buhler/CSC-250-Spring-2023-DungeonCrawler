@@ -22,14 +22,14 @@ public class RefereeController : MonoBehaviour
         this.theMonster = new Monster("goblin");
         this.b = true;
 
-        this.playerhealth.text = "Player's health: " + MasterData.p.getHP();
-        this.playerarmor.text = "Player's armor: " + MasterData.p.getAC();
-        this.playerattack.text = "Player's attack: " + MasterData.p.getDamage();
+        this.playerhealth.text = "Player's health: " + MasterData.thePlayer.getHP();
+        this.playerarmor.text = "Player's armor: " + MasterData.thePlayer.getAC();
+        this.playerattack.text = "Player's attack: " + MasterData.thePlayer.getDamage();
         this.monsterhealth.text = "Monster's health: " + this.theMonster.getHP();
         this.monsterarmor.text = "Monster's armor: " + this.theMonster.getAC();
         this.monsterattack.text = "Monster's attack: " + this.theMonster.getDamage();
 
-        MasterData.d = new Deathmatch(MasterData.p, this.theMonster, this.playerGO, this.monsterGO);
+        MasterData.d = new Deathmatch(MasterData.thePlayer, this.theMonster, this.playerGO, this.monsterGO);
     }
 
     // Update is called once per frame
@@ -40,13 +40,13 @@ public class RefereeController : MonoBehaviour
             StartCoroutine(waitBeforeFight(2.0f));
             this.b = false;
         }
-        this.playerhealth.text = "Player's health: " + MasterData.p.getHP();
-        this.playerarmor.text = "Player's armor: " + MasterData.p.getAC();
-        this.playerattack.text = "Player's attack: " + MasterData.p.getDamage();
+        this.playerhealth.text = "Player's health: " + MasterData.thePlayer.getHP();
+        this.playerarmor.text = "Player's armor: " + MasterData.thePlayer.getAC();
+        this.playerattack.text = "Player's attack: " + MasterData.thePlayer.getDamage();
         this.monsterhealth.text = "Monster's health: " + this.theMonster.getHP();
         this.monsterarmor.text = "Monster's armor: " + this.theMonster.getAC();
         this.monsterattack.text = "Monster's attack: " + this.theMonster.getDamage();
-        if (MasterData.p == MasterData.dudeWhoWon)
+        if (MasterData.thePlayer == MasterData.dudeWhoWon)
         {
             if (!MasterData.isEveryoneAlive && !MasterData.isWinnerCelebrating)
             {

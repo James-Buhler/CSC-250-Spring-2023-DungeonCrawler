@@ -8,7 +8,7 @@ public class MasterData
     private static bool isDungeonSetup = false;
     public static Inhabitant dudeWhoWon = null;
     public static Dungeon cs = null;
-    public static Player p = null;
+    public static Player thePlayer = null;
     public static Monster m = null;
     public static bool hasArrivedAtCenter = true;
     public static GameObject musicLooper = null;
@@ -25,8 +25,8 @@ public class MasterData
             MasterData.cs.populateCSDepartment();
 
             MasterData.m = new Monster("Rat");
-            MasterData.p = new Player("Mike");
-            MasterData.cs.addPlayer(p);
+            MasterData.thePlayer = new Player("Mike");
+            MasterData.cs.addPlayer(thePlayer);
             MasterData.isDungeonSetup = true;
         }
     }

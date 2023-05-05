@@ -18,7 +18,7 @@ public class FightSceneMusic : MonoBehaviour
     {
         if (!MasterData.isEveryoneAlive && b)
         {
-            if(MasterData.p == MasterData.dudeWhoWon)
+            if(MasterData.thePlayer == MasterData.dudeWhoWon)
             {
                 this.fightsound.Pause();
                 this.winsound.Play();

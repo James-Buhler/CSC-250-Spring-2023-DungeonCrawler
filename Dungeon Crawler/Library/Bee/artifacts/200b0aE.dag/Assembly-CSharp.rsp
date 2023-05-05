@@ -354,6 +354,7 @@
 "Assets/Scripts/DungeonSetup.cs"
 "Assets/Scripts/FightScenemover.cs"
 "Assets/Scripts/FightSceneMusic.cs"
+"Assets/Scripts/FollowScript.cs"
 "Assets/Scripts/MasterData.cs"
 "Assets/Scripts/MonsterTrigger.cs"
 "Assets/Scripts/MusicLooper.cs"

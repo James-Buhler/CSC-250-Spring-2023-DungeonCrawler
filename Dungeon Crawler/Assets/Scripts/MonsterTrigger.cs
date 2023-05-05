@@ -34,7 +34,7 @@ public class MonsterTrigger : MonoBehaviour
                         MasterData.musicLooper = null;
                         MasterData.whereDidIComeFrom = this.listOfExits[i].name;
                         MasterData.count++;
-                        MasterData.p.getCurrentRoom().takeExit(MasterData.p, MasterData.whereDidIComeFrom);
+                        MasterData.thePlayer.getCurrentRoom().takeExit(MasterData.thePlayer, MasterData.whereDidIComeFrom);
                         SceneManager.LoadScene("FightScene");
                     }
                 }
